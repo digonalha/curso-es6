@@ -9,6 +9,6 @@
     "@babel/preset-env": "^7.9.0"
   },
   "scripts": {
-    "dev": "babel ./curso/arrays.js -o ./bundle.js"
+    "dev": "babel ./curso/defaultValues.js -o ./bundle.js"
   }
 }

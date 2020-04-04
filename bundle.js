@@ -1,25 +1,26 @@
 "use strict";
 
-var arr = [1, 3, 5, 6, 7, 9];
-console.log(arr); // a extensão map serve para percorremos um array
-// criamos uma funcao que soma o valor do indice com o indice
+function soma(a, b) {
+  return a + b;
+} // se não passar valores pros parametros,
+// ocorre erro NaN (not a number)
 
-var newArr = arr.map(function (item, index) {
-  return item + index;
-});
-console.log(newArr); //soma todos os valores do array
 
-var sum = arr.reduce(function (total, next) {
-  return total + next;
-});
-console.log(sum); // retorna somente os numero que passam na condição da função
+console.log(soma(1));
+console.log(soma()); //colocando valores padrões nos parametros
 
-var filter = arr.filter(function (item) {
-  return item % 2 === 0;
-});
-console.log(filter); //retorna o item que passa na condição criada no método
+function somaDefaultValues() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+  return a + b;
+}
 
-var find = arr.find(function (item) {
-  return item === 23;
-});
-console.log(find);
+console.log(somaDefaultValues()); //utilizando como arrow function
+
+var somaArrowFunctionWithDefaultValues = function somaArrowFunctionWithDefaultValues() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  return a + b;
+};
+
+console.log(somaArrowFunctionWithDefaultValues());
